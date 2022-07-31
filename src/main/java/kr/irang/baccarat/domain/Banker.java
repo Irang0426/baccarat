@@ -1,22 +1,19 @@
 package kr.irang.baccarat.domain;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Banker {
-    private List<Card> cards;
-
+public class Banker extends Role {
     public Banker() {
-        cards = new ArrayList<>();
+        super();
     }
 
+    @Override
     public void receiveCard(Card card) {
         this.cards.add(card);
-        System.out.println(card.getPattern() + card.getDenomination());
     }
 
-    public List<Card> openCards() {
+    @Override
+    public List<Card> getCards() {
         return this.cards;
     }
 }

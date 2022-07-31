@@ -2,9 +2,9 @@ package kr.irang.baccarat.domain;
 
 public class Card {
     private String pattern;
-    private String denomination;
+    private int denomination;
 
-    public Card(String pattern, String denomination) {
+    public Card(String pattern, int denomination) {
         this.pattern = pattern;
         this.denomination = denomination;
     }
@@ -17,11 +17,24 @@ public class Card {
         this.pattern = pattern;
     }
 
-    public String getDenomination() {
+    public int getDenomination() {
         return denomination;
     }
 
-    public void setDenomination(String denomination) {
+    public void setDenomination(int denomination) {
         this.denomination = denomination;
+    }
+
+    public String getSpecialCharacter(String pattern) {
+        switch (pattern) {
+            case "spade":
+                return "♠";
+            case "heart":
+                return "♥";
+            case "diamond":
+                return "◆";
+            default:
+                return "♣";
+        }
     }
 }
