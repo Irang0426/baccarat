@@ -2,7 +2,7 @@ package kr.irang.baccarat.domain;
 
 import java.util.List;
 
-public class Banker extends Role {
+public class Banker extends Camp {
     public Banker() {
         super();
     }

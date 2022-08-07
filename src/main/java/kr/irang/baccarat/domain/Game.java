@@ -5,28 +5,29 @@ public class Game {
         CardDeck cardDeck = new CardDeck();
         Banker banker = new Banker();
         Player player = new Player();
+        Rule rule = new Rule(cardDeck.getDeck());
 
         for (int i = 0; i < 2; i++) {
-            Card card = cardDeck.draw();
+            Card card = rule.draw();
             banker.receiveCard(card);
-            Card card2 = cardDeck.draw();
+            Card card2 = rule.draw();
             player.receiveCard(card2);
         }
 
         player.showCards("Player");
         banker.showCards("Banker");
 
-        cardDeck.additionalDraw(player, banker);
+        rule.additionalDraw(player, banker);
 
         player.showCards("Player");
         banker.showCards("Banker");
 
         System.out.println();
-        if (cardDeck.checkPlayerVictory(player, banker)) {
+        if (rule.checkPlayerVictory(player, banker)) {
             System.out.println("플레이어측의 승리");
-        } else if (cardDeck.checkBankerVictory(player, banker)) {
+        } else if (rule.checkBankerVictory(player, banker)) {
             System.out.println("뱅커측의 승리");
-        } else if (cardDeck.checkTie(player, banker)) {
+        } else if (rule.checkTie(player, banker)) {
             System.out.println("무승부");
         }
     }
