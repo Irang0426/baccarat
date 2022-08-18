@@ -2,7 +2,7 @@ package kr.irang.baccarat.domain;
 
 import java.util.List;
 
-public class Player extends Camp {
+public class Player extends Side {
     public Player() {
         super();
     }

@@ -3,10 +3,10 @@ package kr.irang.baccarat.domain;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Camp {
+public abstract class Side {
     protected final List<Card> cards;
 
-    public Camp() {
+    public Side() {
         this.cards = new LinkedList<>();
     }
 

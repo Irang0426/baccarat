@@ -28,7 +28,7 @@ public class Rule {
         return selectedCard;
     }
 
-    public int sum(Camp camp) {
+    public int sum(Side camp) {
         List<Card> cards = camp.getCards();
         int[] cardNumbers = new int[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
@@ -87,5 +87,19 @@ public class Rule {
         int playerSum = sum(player);
         int bankerSum = sum(banker);
         return playerSum == bankerSum;
+    }
+
+    public String showSum(Player player, Banker banker) {
+        return "Player의 합 = " + sum(player) + ", Banker의 합 = " + sum(banker);
+    }
+
+    public String checkWinner(Player player, Banker banker) {
+        if (checkPlayerVictory(player, banker)) {
+            return showSum(player, banker) + " 결과 : 플레이어측의 승리";
+        } else if (checkBankerVictory(player, banker)) {
+            return showSum(player, banker) + " 결과 : 뱅커측의 승리";
+        } else {
+            return showSum(player, banker) + " 결과 : 무승부";
+        }
     }
 }

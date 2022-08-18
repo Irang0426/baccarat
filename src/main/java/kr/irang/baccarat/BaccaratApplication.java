@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BaccaratApplication {
     public static void main(String[] args) {
-        Game game = new Game();
-        game.play();
+        SpringApplication.run(BaccaratApplication.class, args);
     }
 }
