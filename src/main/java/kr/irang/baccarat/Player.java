@@ -1,9 +1,9 @@
-package kr.irang.baccarat.domain;
+package kr.irang.baccarat;
 
 import java.util.List;
 
-public class Banker extends Side {
-    public Banker() {
+public class Player extends Side {
+    public Player() {
         super();
     }
 

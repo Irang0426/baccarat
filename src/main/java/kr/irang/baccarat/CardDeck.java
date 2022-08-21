@@ -1,4 +1,4 @@
-package kr.irang.baccarat.domain;
+package kr.irang.baccarat;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,8 +1,7 @@
-package kr.irang.baccarat.domain;
+package kr.irang.baccarat;
 
 public class Gamer {
     private int money ;
-    private int selectTeam;
 
     public Gamer(int money) {
         this.money = money;
@@ -16,11 +15,4 @@ public class Gamer {
         this.money = money;
     }
 
-    public int getSelectTeam() {
-        return selectTeam;
-    }
-
-    public void setSelectTeam(int selectTeam) {
-        this.selectTeam = selectTeam;
-    }
 }

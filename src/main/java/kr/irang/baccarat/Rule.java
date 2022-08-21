@@ -1,4 +1,4 @@
-package kr.irang.baccarat.domain;
+package kr.irang.baccarat;
 
 import java.util.List;
 import java.util.Random;
@@ -28,8 +28,8 @@ public class Rule {
         return selectedCard;
     }
 
-    public int sum(Side camp) {
-        List<Card> cards = camp.getCards();
+    public int sum(Side side) {
+        List<Card> cards = side.getCards();
         int[] cardNumbers = new int[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
             Card card = cards.get(i);

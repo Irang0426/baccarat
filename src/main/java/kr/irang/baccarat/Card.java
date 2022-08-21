@@ -1,4 +1,4 @@
-package kr.irang.baccarat.domain;
+package kr.irang.baccarat;
 
 public class Card {
     private String pattern;
