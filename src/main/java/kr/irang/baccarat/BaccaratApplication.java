@@ -26,19 +26,10 @@ public class BaccaratApplication {
 //                }
 //        );
 
-        int i = 0;
-        while (i == 0) {
-            int result = QuestionProviders.of(Questions.Q_Continue).runWithResult();
+        int result = QuestionProviders.of(Questions.Q_Continue).runWithResult();
 
-            if (result == 1) {
-                game.play(gamer);
-            } else if (gamer.getMoney() == 0) {
-                System.out.println("게임을 종료합니다.");
-                i++;
-            } else {
-                System.out.println("게임을 종료합니다.");
-                i++;
-            }
+        if (result == 1) {
+            game.play(gamer);
         }
     }
 }
