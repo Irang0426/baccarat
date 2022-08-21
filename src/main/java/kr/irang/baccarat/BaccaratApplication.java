@@ -13,23 +13,14 @@ public class BaccaratApplication {
 
         game.play(gamer);
 
-
-//        QuestionProvider.provide(
-//                "계속 하시겠습니까?", //question
-//                (answer) -> {
-//                    answer.setAnswer("Yes");
-//                    answer.setAction(() -> {/*do Something*/});
-//                },
-//                (answer) -> {
-//                    answer.setAnswer("No");
-//                    answer.setAction(() -> {/*do Something*/});
-//                }
-//        );
-
-        int result = QuestionProviders.of(Questions.Q_Continue).runWithResult();
-
-        if (result == 1) {
-            game.play(gamer);
+        int i = 0;
+        while (i == 0) {
+            int result = QuestionProviders.of(Questions.Q_Continue).runWithResult();
+            if (result == 1) {
+                game.play(gamer);
+            } else if (result == 2) {
+                i++;
+            }
         }
     }
 }
