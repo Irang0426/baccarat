@@ -1,8 +1,5 @@
 package kr.irang.baccarat;
 
-import kr.irang.baccarat.domain.Game;
-import kr.irang.baccarat.domain.Gamer;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Scanner;
@@ -31,12 +28,9 @@ public class BaccaratApplication {
 
         int i = 0;
         while (i == 0) {
-            System.out.println("계속 하시겠습니까?");
-            System.out.println("Yes - 1");
-            System.out.println("No  - 2");
-            Scanner sc = new Scanner(System.in);
-            int stop = sc.nextInt();
-            if (stop == 1) {
+            int result = QuestionProviders.of(Questions.Q_Continue).runWithResult();
+
+            if (result == 1) {
                 game.play(gamer);
             } else if (gamer.getMoney() == 0) {
                 System.out.println("게임을 종료합니다.");
