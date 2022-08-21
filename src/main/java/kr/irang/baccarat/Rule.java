@@ -6,9 +6,13 @@ import java.util.stream.IntStream;
 
 public class Rule {
     private List<Card> deck;
+    private Player player;
+    private Banker banker;
 
-    public Rule(List<Card> deck) {
+    public Rule(List<Card> deck, Player player, Banker banker) {
         this.deck = deck;
+        this.player = player;
+        this.banker = banker;
     }
     private int transNumber(int number) {
         if (number >= 11) {
@@ -41,10 +45,8 @@ public class Rule {
 
     /**
      * 조건 확인 후 추가 드로우
-     * @param player
-     * @param banker
      */
-    public void additionalDraw(Player player, Banker banker) {
+    public void additionalDraw() {
         int playerSum = sum(player);
         int bankerSum = sum(banker);
 
@@ -88,35 +90,35 @@ public class Rule {
         }
     }
 
-    public boolean checkPlayerVictory(Player player, Banker banker) {
+    public boolean checkPlayerVictory() {
         int playerSum = sum(player);
         int bankerSum = sum(banker);
         return playerSum > bankerSum;
     }
 
-    public boolean checkBankerVictory(Player player, Banker banker) {
+    public boolean checkBankerVictory() {
         int playerSum = sum(player);
         int bankerSum = sum(banker);
         return playerSum < bankerSum;
     }
 
-    public boolean checkTie(Player player, Banker banker) {
+    public boolean checkTie() {
         int playerSum = sum(player);
         int bankerSum = sum(banker);
         return playerSum == bankerSum;
     }
 
-    public String showSum(Player player, Banker banker) {
+    public String showSum() {
         return "Player의 합 = " + sum(player) + ", Banker의 합 = " + sum(banker);
     }
 
     public String checkWinner(Player player, Banker banker) {
-        if (checkPlayerVictory(player, banker)) {
-            return showSum(player, banker) + System.lineSeparator() + "결과 : 플레이어측의 승리\n";
-        } else if (checkBankerVictory(player, banker)) {
-            return showSum(player, banker) + System.lineSeparator() + "결과 : 뱅커측의 승리\n";
+        if (checkPlayerVictory()) {
+            return showSum() + System.lineSeparator() + "결과 : 플레이어측의 승리\n";
+        } else if (checkBankerVictory()) {
+            return showSum() + System.lineSeparator() + "결과 : 뱅커측의 승리\n";
         } else {
-            return showSum(player, banker) + System.lineSeparator() + "결과 : 무승부\n";
+            return showSum() + System.lineSeparator() + "결과 : 무승부\n";
         }
     }
 }

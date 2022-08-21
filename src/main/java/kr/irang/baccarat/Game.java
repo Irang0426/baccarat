@@ -8,7 +8,7 @@ public class Game {
         CardDeck cardDeck = new CardDeck();
         Banker banker = new Banker();
         Player player = new Player();
-        Rule rule = new Rule(cardDeck.getDeck());
+        Rule rule = new Rule(cardDeck.getDeck(), player, banker);
 
         for (int i = 0; i < 2; i++) {
             Card card = rule.draw();
@@ -27,11 +27,11 @@ public class Game {
         player.showCards("Player");
         banker.showCards("Banker");
 
-        rule.additionalDraw(player, banker);
+        rule.additionalDraw();
 
         System.out.println(rule.checkWinner(player, banker));
 
-        if (rule.checkPlayerVictory(player, banker)) {
+        if (rule.checkPlayerVictory()) {
             if(bettingSide == 1) {
                 gamer.setMoney(gamer.getMoney() + bettingMoney);
                 System.out.println(bettingMoney + "원을 획득하였습니다!!");
@@ -39,7 +39,7 @@ public class Game {
                 gamer.setMoney(gamer.getMoney() - bettingMoney);
                 System.out.println(bettingMoney + "원을 잃었습니다ㅠㅠ");
             }
-        } else if (rule.checkBankerVictory(player, banker)) {
+        } else if (rule.checkBankerVictory()) {
             if(bettingSide == 1) {
                 gamer.setMoney(gamer.getMoney() - bettingMoney);
                 System.out.println(bettingMoney + "원을 잃었습니다ㅠㅠ");
