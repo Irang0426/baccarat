@@ -47,24 +47,29 @@ public class Rule {
             if (playerSum <= 5) {
                 Card card = draw();
                 player.receiveCard(card);
+                System.out.println("Player측 카드를 한장 더 뽑습니다.");
                 int cardNumber = card.getDenomination();
                 if (bankerSum <= 2) {
                     banker.receiveCard(draw());
                 } else if (bankerSum == 3) {
                     if (cardNumber <= 7 || cardNumber == 9) {
                         banker.receiveCard(draw());
+                        System.out.println("Banker측 카드를 한장 더 뽑습니다.");
                     }
                 } else if (bankerSum == 4) {
                     if (2 <= cardNumber && cardNumber <= 7) {
                         banker.receiveCard(draw());
+                        System.out.println("Banker측 카드를 한장 더 뽑습니다.");
                     }
                 } else if (bankerSum == 5) {
                     if (4 <= cardNumber && cardNumber <= 7) {
                         banker.receiveCard(draw());
+                        System.out.println("Banker측 카드를 한장 더 뽑습니다.");
                     }
                 } else if (bankerSum == 6) {
                     if (6 <= cardNumber && cardNumber <= 7) {
                         banker.receiveCard(draw());
+                        System.out.println("Banker측 카드를 한장 더 뽑습니다.");
                     }
                 }
             }
