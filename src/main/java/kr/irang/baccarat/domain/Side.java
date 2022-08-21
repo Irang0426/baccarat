@@ -12,8 +12,8 @@ public abstract class Side {
 
     abstract void receiveCard(Card card);
 
-    public void showCards(String campName) {
-        System.out.println(campName + "의 카드");
+    public void showCards(String sideName) {
+        System.out.println(sideName + "의 카드");
         for (Card card : cards) {
             int cardNumber = card.getDenomination();
             String cardLetter;

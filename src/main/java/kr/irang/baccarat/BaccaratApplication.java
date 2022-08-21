@@ -16,6 +16,19 @@ public class BaccaratApplication {
 
         game.play(gamer);
 
+
+//        QuestionProvider.provide(
+//                "계속 하시겠습니까?", //question
+//                (answer) -> {
+//                    answer.setAnswer("Yes");
+//                    answer.setAction(() -> {/*do Something*/});
+//                },
+//                (answer) -> {
+//                    answer.setAnswer("No");
+//                    answer.setAction(() -> {/*do Something*/});
+//                }
+//        );
+
         int i = 0;
         while (i == 0) {
             System.out.println("계속 하시겠습니까?");
@@ -25,6 +38,9 @@ public class BaccaratApplication {
             int stop = sc.nextInt();
             if (stop == 1) {
                 game.play(gamer);
+            } else if (gamer.getMoney() == 0) {
+                System.out.println("게임을 종료합니다.");
+                i++;
             } else {
                 System.out.println("게임을 종료합니다.");
                 i++;
