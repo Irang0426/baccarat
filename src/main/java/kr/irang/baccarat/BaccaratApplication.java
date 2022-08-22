@@ -9,14 +9,15 @@ public class BaccaratApplication {
     public static void main(String[] args) {
 //        SpringApplication.run(BaccaratApplication.class, args);
         Game game = new Game();
+        Gamer gamer = new Gamer(10000);
 
-        game.play();
+        game.play(gamer);
 
         int i = 0;
         while (i == 0) {
             int result = QuestionProviders.of(Questions.Q_Continue).runWithResult();
             if (result == 1) {
-                game.play();
+                game.play(gamer);
             } else if (result == 2) {
                 i++;
             }

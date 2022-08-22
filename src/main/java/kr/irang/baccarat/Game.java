@@ -3,13 +3,12 @@ package kr.irang.baccarat;
 import java.util.Scanner;
 
 public class Game {
-    public void play() {
+    public void play(Gamer gamer) {
 
         CardDeck cardDeck = new CardDeck();
         Banker banker = new Banker();
         Player player = new Player();
         Rule rule = new Rule(cardDeck.getDeck(), player, banker);
-        Gamer gamer = new Gamer(10000);
 
         for (int i = 0; i < 2; i++) {
             Card card = rule.draw();
