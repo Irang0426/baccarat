@@ -1,7 +1,6 @@
 package kr.irang.baccarat;
 
 public enum Questions {
-    Q_Welcome(null),
     Q_Continue(null),
     Q_BettingSide(null);
 
