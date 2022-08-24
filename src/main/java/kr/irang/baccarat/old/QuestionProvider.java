@@ -1,4 +1,4 @@
-package kr.irang.baccarat;
+package kr.irang.baccarat.old;
 
 import java.util.ArrayList;
 import java.util.List;

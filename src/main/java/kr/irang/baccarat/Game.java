@@ -1,5 +1,8 @@
 package kr.irang.baccarat;
 
+import kr.irang.baccarat.old.QuestionProviders;
+import kr.irang.baccarat.old.Questions;
+
 import java.util.Scanner;
 
 public class Game {

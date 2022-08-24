@@ -1,8 +1,8 @@
 package kr.irang.baccarat;
 
+import kr.irang.baccarat.old.QuestionProviders;
+import kr.irang.baccarat.old.Questions;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Scanner;
 
 @SpringBootApplication
 public class BaccaratApplication {
