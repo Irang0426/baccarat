@@ -5,4 +5,7 @@ public enum Question {
     LOG_IN,
     NEW_ACCOUNT,
     GAME_START,
+    GAME_FINISHED,
+    GAME_BETTING,
+    GAME_COMPARE,
 }
